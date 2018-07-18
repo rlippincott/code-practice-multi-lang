@@ -1,0 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package multiarray;
+
+/**
+ *
+ * @author Ryan Lippincott
+ */
+import java.util.Scanner;
+
+public class MultiArray {
+    
+    public static double averageSalary(int coSelect, int[][] salInformation){
+        
+    int x = 0;
+    double average = 0;
+    for (int i = 0; i < salInformation[coSelect].length; i++) {
+        x = x + salInformation[coSelect][i];
+        average = x / salInformation[coSelect].length;
+        }
+        return average;
+    }
+    
+    public static int totalSalary(int coSelect, int [][] salInformation){
+    int sum = 0;
+    for (int i: salInformation[0]){
+    sum = sum + i;
+    }
+    
+    /*
+    
+    for (int i = 0; i < salInformation[coSelect].length; i++){
+            sum += y + salInformation[coSelect][i];
+        }*/
+    return sum;
+    }
+    
+    
+    
+    public static int totalEmployees(int coSelect, int [][] salInformation){
+    int z = 0;
+    int countEmployees = 0;
+    for (int i = 0; i < salInformation[coSelect].length; i++){
+        countEmployees = z + salInformation[coSelect].length;
+    }
+    return countEmployees;
+    }
+    
+    public static void main(String[] args) {
+    
+    int [][] salaryArray = {
+    
+        {49920, 50831, 39430, 54697, 41751, 36110, 41928, 48460, 39714, 49271, 51713, 38903},
+        {45519, 47373, 36824, 51229, 36966, 40332, 53294, 44907, 36050, 51574, 39758, 53847},
+        {54619, 48339, 44260, 44390, 39732, 44073, 53308, 35459, 52448, 38364, 39990, 47373}
+    };
+    
+    System.out.print("Please select a company by entering the following options:\n\t0: Alhermit\n\t1: Logway\n\t2: Felter");
+    Scanner scan = new  Scanner(System.in);
+    int companySelection = scan.nextInt();
+        if (companySelection == 0){
+            System.out.print("Alhermit information is as follows:\n\tAverage Salary: " + averageSalary(companySelection, salaryArray) + "\n\tTotal Salaries " + totalSalary(companySelection, salaryArray) + "\n\tTotal Employees: " + totalEmployees(companySelection, salaryArray));
+        }
+        else if (companySelection == 1){
+            System.out.print("Logway information is as follows:\n\tAverage Salary: " + averageSalary(companySelection, salaryArray) + "\n\tTotal Salaries " + totalSalary(companySelection, salaryArray) + "\n\tTotal Employees: " + totalEmployees(companySelection, salaryArray));
+        }
+        else if (companySelection == 2){
+            System.out.print("Felter information is as follows:\n\tAverage Salary: " + averageSalary(companySelection, salaryArray) + "\n\tTotal Salaries " + totalSalary(companySelection, salaryArray) + "\n\tTotal Employees: " + totalEmployees(companySelection, salaryArray));
+        }
+        else {
+            System.out.println("You have entered an invalid selection");
+        }
+    }
+    
+}

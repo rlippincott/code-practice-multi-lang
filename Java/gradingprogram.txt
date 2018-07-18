@@ -1,0 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lettergrade;
+
+/**
+ *
+ * @author Ryan Lippincott
+ */
+import java.util.Scanner; //import scanner to allow user input
+
+public class LetterGrade {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) 
+    {
+        Scanner scan = new Scanner(System.in);
+        
+        String letterGrade; //declared for entries that pass user verification
+        String failedGrade; //declared for user verification
+        
+        System.out.print("Enter your test grade as an integer: ");
+        
+        while (!scan.hasNextInt()) //User verification
+        {
+            failedGrade = scan.nextLine();
+            System.out.println("Please enter an integer: ");
+        }
+        
+        int grade = scan.nextInt();
+        //Program Logic
+        if (grade >= 97)
+            letterGrade = "A+";
+        
+        else if (grade >= 93)
+            letterGrade = "A";
+        
+        else if (grade >= 90)
+            letterGrade = "A-";
+        
+        else if (grade >= 87)
+            letterGrade = "B+";
+        
+        else if (grade >= 83)
+            letterGrade = "B";
+        
+        else if (grade >= 80)
+            letterGrade = "B-";
+        
+        else if (grade >= 77)
+            letterGrade = "C+";
+        
+        else if (grade >= 73)
+            letterGrade = "C";
+        
+        else if (grade >= 70)
+            letterGrade = "C-";
+        
+        else if (grade >= 67)
+            letterGrade = "D+";
+        
+        else if (grade >= 65)
+            letterGrade = "D";
+        
+        else if (grade >= 60)
+            letterGrade = "D-";
+        
+        else
+            letterGrade = "F";
+        //Program Output
+        System.out.println( "Your test grade of " + grade + " is a letter grade of " + letterGrade);
+    }
+    
+}

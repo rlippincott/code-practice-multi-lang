@@ -1,0 +1,70 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package carloanclient;
+/**
+ *
+ * @author Ryan Lippincott
+ */
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.NoSuchElementException;
+
+
+public class CarLoanClient {
+   
+    public void withdraw(int currentBalance, CarLoan loanOne, int monthlyPayment){
+    
+        currentBalance = loanOne - monthlyPayment;
+    }
+    
+    public static void loanConstructor (){
+        
+    CarLoan loanOne = new CarLoan(18875); 
+    
+        try {
+            Scanner file = new Scanner(new File("payments.txt"));
+            while (file.hasNext()) {
+                int monthlyPayment = file.nextInt();
+                if (!file.hasNextInt()) {
+                    System.out.println("Invalid file format");
+                    String invalidData = file.nextLine();
+                }
+                else {
+                    String newLine = file.nextLine();
+                    //System.out.println();
+                }
+                int currentBalance = loanOne - monthlyPayment;
+            }
+            file.close();
+            }
+            catch (FileNotFoundException fnfe) {
+            System.out.println("Unable to find payments.txt. Exiting");
+            }
+            catch (NoSuchElementException nsee) {
+            System.out.println("Attempt to read past the end of the file");
+            }
+            catch (IllegalStateException ise) {
+            System.out.println("Attempt to read after the file is closed");
+            }
+        
+        
+        }
+        
+    }
+    
+    
+    
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        
+        
+    
+}

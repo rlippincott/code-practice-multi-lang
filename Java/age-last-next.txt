@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package myfirstprogram;
+
+/**
+ *
+ * @author Ryan Lippincott
+ */
+public class MyFirstProgram {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        // This is my first program
+        // Enter your name where it says your name.
+        String name = "Ryan"; //See table 2.7 for data types
+        //Enter your age
+        int age = 27;
+        int ageNextBirthday, ageLastBirthday;
+        //age-- subtracts 1 from age
+        ageNextBirthday = age--;//See table 2.12 for shortcut operators
+        //age++ adds 1 to age
+        ageLastBirthday = age++;
+        
+        //Print out your results
+        System.out.println("Hello, my name is"+name+".");
+        System.out.println("My age is "+age+".");
+        System.out.println("My age last birthday was "+ageLastBirthday+".");
+        System.out.println("My age next birthday is "+ageNextBirthday+".");
+    }
+    
+}
